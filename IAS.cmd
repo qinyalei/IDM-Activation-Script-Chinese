@@ -373,23 +373,23 @@ echo:
 call :_color2 %_White% "             " %_Green% "Create By Piash"
 echo:            ___________________________________________________ 
 echo:
-echo:               翻译By https://github.com/jiangbeichen233
+echo:               ????By https://github.com/jiangbeichen233
 echo:               Telegram: @ModByPiash
 echo:               Github: https://github.com/lstprjct
 echo:               
 echo:            ___________________________________________________ 
 echo:                                                               
-echo:               [1] 激活
-echo:               [2] 冻结试用
-echo:               [3] 重置激活/试用
+echo:               [1] ????
+echo:               [2] ????????
+echo:               [3] ???ü???/????
 echo:               _____________________________________________   
 echo:                                                               
-echo:               [4] 下载IDM
-echo:               [5] 帮助
-echo:               [0] 退出
+echo:               [4] ????IDM
+echo:               [5] ????
+echo:               [0] ???
 echo:            ___________________________________________________
 echo:         
-call :_color2 %_White% "             " %_Green% "选择键盘上的 [1,2,3,4,5,0]以操控菜单"
+call :_color2 %_White% "             " %_Green% "????????? [1,2,3,4,5,0]??????"
 choice /C:123450 /N
 set _erl=%errorlevel%
 
@@ -433,14 +433,14 @@ call :add_key
 echo:
 echo %line%
 echo:
-call :_color %Green% "IDM重置过程已经完成."
+call :_color %Green% "IDM???ù?????????."
 
 goto done
 
 :delete_queue
 
 echo:
-echo 删除IDM注册表...
+echo ???IDM????...
 echo:
 
 for %%# in (
@@ -485,7 +485,7 @@ set "reg=%reg:"=%"
 echo Deleted - !reg!
 ) else (
 set "reg=%reg:"=%"
-call :_color2 %Red% "失败 - !reg!"
+call :_color2 %Red% "??? - !reg!"
 )
 
 exit /b
@@ -506,20 +506,20 @@ if %frz%==0 if %_unattended%==0 (
 echo:
 echo %line%
 echo:
-echo      一些用户的激活无法正常工作，IDM可能会显示虚假序列号的提示。.
+echo      ?Щ?????????????????????IDM??????????????к???????.
 echo:
-call :_color2 %_White% "     " %_Green% "建议使用冻结试用选项."
+call :_color2 %_White% "     " %_Green% "?????????????????."
 echo %line%
 echo:
-choice /C:19 /N /M ">    [1] 返回 [9] 激活 : "
+choice /C:19 /N /M ">    [1] ???? [9] ???? : "
 if !errorlevel!==1 goto :MainMenu
 cls
 )
 
 echo:
 if not exist "%IDMan%" (
-call :_color %Red% "IDM未安装."
-echo "你可以在这里下载" https://www.internetdownloadmanager.com/download.html
+call :_color %Red% "IDMδ???."
+echo "???????????????" https://www.internetdownloadmanager.com/download.html
 goto done
 )
 
@@ -530,10 +530,10 @@ for /f "delims=[] tokens=2" %%# in ('ping -n 1 internetdownloadmanager.com') do 
 
 if not defined _int (
 %psc% "$t = New-Object Net.Sockets.TcpClient;try{$t.Connect("""internetdownloadmanager.com""", 80)}catch{};$t.Connected" | findstr /i "true" %nul1% || (
-call :_color %Red% "无法连接到internetdownloadmanager.com，正在中止..."
+call :_color %Red% "????????internetdownloadmanager.com?????????..."
 goto done
 )
-call :_color %Gray% "Ping命令对internetdownloadmanager.com失败"
+call :_color %Gray% "Ping?????internetdownloadmanager.com???"
 echo:
 )
 
@@ -577,13 +577,13 @@ echo:
 echo %line%
 echo:
 if %frz%==0 (
-call :_color %Green% "IDM激活过程已完成."
+call :_color %Green% "IDM????????????."
 echo:
-call :_color %Gray% "如果出现假序列号屏幕，请改用冻结试用选项."
+call :_color %Gray% "???????????к?????????????????????."
 ) else (
-call :_color %Green% "IDM 30天试用期已成功冻结，终身免费使用."
+call :_color %Green% "IDM 30??????????????????????????."
 echo:
-call :_color %Gray% "如果IDM显示弹出窗口进行注册，请重新安装IDM."
+call :_color %Gray% "???IDM??????????????????????°??IDM."
 )
 
 ::========================================================================================================================================
@@ -596,10 +596,10 @@ echo:
 if %_unattended%==1 timeout /t 2 & exit /b
 
 if defined terminal (
-call :_color %_Yellow% "按0键返回..."
+call :_color %_Yellow% "??0??????..."
 choice /c 0 /n
 ) else (
-call :_color %_Yellow% "按0任意键返回..."
+call :_color %_Yellow% "??0?????????..."
 pause %nul1%
 )
 goto MainMenu
@@ -628,7 +628,7 @@ exit /b
 :register_IDM
 
 echo:
-echo 应用注册详情...
+echo ??????????...
 echo:
 
 set /a fname = %random% %% 9999 + 1000
@@ -653,7 +653,7 @@ exit /b
 :download_files
 
 echo:
-echo 触发一些下载以创建特定的注册表，请稍候...
+echo ?????Щ?????????????????????????...
 echo:
 
 set "file=%SystemRoot%\Temp\temp.png"
@@ -691,7 +691,7 @@ goto :Check_file
 :add_key
 
 echo:
-echo 添加注册表键...
+echo ??????????...
 echo:
 
 set "reg="%HKLM%" /v "AdvIntDriverEnabled2""

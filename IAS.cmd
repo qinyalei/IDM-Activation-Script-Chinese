@@ -373,26 +373,28 @@ echo:
 call :_color2 %_White% "             " %_Green% "Create By Piash"
 echo:            ___________________________________________________ 
 echo:
+echo:               翻译By https://github.com/jiangbeichen233
 echo:               Telegram: @ModByPiash
 echo:               Github: https://github.com/lstprjct
+echo:               
 echo:            ___________________________________________________ 
 echo:                                                               
-echo:               [1] Activate
-echo:               [2] Freeze Trial
-echo:               [3] Reset Activation / Trial
+echo:               [1] 激活
+echo:               [2] 冻结试用
+echo:               [3] 重置激活/试用
 echo:               _____________________________________________   
 echo:                                                               
-echo:               [4] Download IDM
-echo:               [5] Help
-echo:               [0] Exit
+echo:               [4] 下载IDM
+echo:               [5] 帮助
+echo:               [0] 退出
 echo:            ___________________________________________________
 echo:         
-call :_color2 %_White% "             " %_Green% "Enter a menu option in the Keyboard [1,2,3,4,5,0]"
+call :_color2 %_White% "             " %_Green% "选择键盘上的 [1,2,3,4,5,0]以操控菜单"
 choice /C:123450 /N
 set _erl=%errorlevel%
 
 if %_erl%==6 exit /b
-if %_erl%==5 start https://github.com/lstprjct/IDM-Activation-Script & goto MainMenu
+if %_erl%==5 start https://github.com/jiangbeichen233/IDM-Activation-Script-Chinese & goto MainMenu
 if %_erl%==4 start https://www.internetdownloadmanager.com/download.html & goto MainMenu
 if %_erl%==3 goto _reset
 if %_erl%==2 (set frz=1&goto :_activate)
@@ -431,14 +433,14 @@ call :add_key
 echo:
 echo %line%
 echo:
-call :_color %Green% "The IDM reset process has been completed."
+call :_color %Green% "IDM重置过程已经完成."
 
 goto done
 
 :delete_queue
 
 echo:
-echo Deleting IDM registry keys...
+echo 删除IDM注册表...
 echo:
 
 for %%# in (
@@ -483,7 +485,7 @@ set "reg=%reg:"=%"
 echo Deleted - !reg!
 ) else (
 set "reg=%reg:"=%"
-call :_color2 %Red% "Failed - !reg!"
+call :_color2 %Red% "失败 - !reg!"
 )
 
 exit /b
@@ -504,20 +506,20 @@ if %frz%==0 if %_unattended%==0 (
 echo:
 echo %line%
 echo:
-echo      Activation is not working for some users and IDM may show fake serial nag screen.
+echo      一些用户的激活无法正常工作，IDM可能会显示虚假序列号的提示。.
 echo:
-call :_color2 %_White% "     " %_Green% "Its recommended to use Freeze Trial option instead."
+call :_color2 %_White% "     " %_Green% "建议使用冻结试用选项."
 echo %line%
 echo:
-choice /C:19 /N /M ">    [1] Go Back [9] Activate : "
+choice /C:19 /N /M ">    [1] 返回 [9] 激活 : "
 if !errorlevel!==1 goto :MainMenu
 cls
 )
 
 echo:
 if not exist "%IDMan%" (
-call :_color %Red% "IDM [Internet Download Manager] is not Installed."
-echo You can download it from  https://www.internetdownloadmanager.com/download.html
+call :_color %Red% "IDM未安装."
+echo "你可以在这里下载" https://www.internetdownloadmanager.com/download.html
 goto done
 )
 
@@ -528,10 +530,10 @@ for /f "delims=[] tokens=2" %%# in ('ping -n 1 internetdownloadmanager.com') do 
 
 if not defined _int (
 %psc% "$t = New-Object Net.Sockets.TcpClient;try{$t.Connect("""internetdownloadmanager.com""", 80)}catch{};$t.Connected" | findstr /i "true" %nul1% || (
-call :_color %Red% "Unable to connect internetdownloadmanager.com, aborting..."
+call :_color %Red% "无法连接到internetdownloadmanager.com，正在中止..."
 goto done
 )
-call :_color %Gray% "Ping command failed for internetdownloadmanager.com"
+call :_color %Gray% "Ping命令对internetdownloadmanager.com失败"
 echo:
 )
 
@@ -575,13 +577,13 @@ echo:
 echo %line%
 echo:
 if %frz%==0 (
-call :_color %Green% "The IDM Activation process has been completed."
+call :_color %Green% "IDM激活过程已完成."
 echo:
-call :_color %Gray% "If the fake serial screen appears, use the Freeze Trial option instead."
+call :_color %Gray% "如果出现假序列号屏幕，请改用冻结试用选项."
 ) else (
-call :_color %Green% "The IDM 30 days trial period is successfully freezed for Lifetime."
+call :_color %Green% "IDM 30天试用期已成功冻结，终身免费使用."
 echo:
-call :_color %Gray% "If IDM is showing a popup to register, reinstall IDM."
+call :_color %Gray% "如果IDM显示弹出窗口进行注册，请重新安装IDM."
 )
 
 ::========================================================================================================================================
@@ -594,10 +596,10 @@ echo:
 if %_unattended%==1 timeout /t 2 & exit /b
 
 if defined terminal (
-call :_color %_Yellow% "Press 0 key to return..."
+call :_color %_Yellow% "按0键返回..."
 choice /c 0 /n
 ) else (
-call :_color %_Yellow% "Press any key to return..."
+call :_color %_Yellow% "按0任意键返回..."
 pause %nul1%
 )
 goto MainMenu
@@ -626,7 +628,7 @@ exit /b
 :register_IDM
 
 echo:
-echo Applying registration details...
+echo 应用注册详情...
 echo:
 
 set /a fname = %random% %% 9999 + 1000
@@ -651,7 +653,7 @@ exit /b
 :download_files
 
 echo:
-echo Triggering a few downloads to create certain registry keys, please wait...
+echo 触发一些下载以创建特定的注册表，请稍候...
 echo:
 
 set "file=%SystemRoot%\Temp\temp.png"
@@ -689,7 +691,7 @@ goto :Check_file
 :add_key
 
 echo:
-echo Adding registry key...
+echo 添加注册表键...
 echo:
 
 set "reg="%HKLM%" /v "AdvIntDriverEnabled2""

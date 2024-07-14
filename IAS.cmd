@@ -373,23 +373,23 @@ echo:
 call :_color2 %_White% "             " %_Green% "Create By Piash"
 echo:            ___________________________________________________ 
 echo:
-echo:               ç¿»è¯‘By https://github.com/jiangbeichen233
+echo:               ·­ÒëBy https://github.com/jiangbeichen233
 echo:               Telegram: @ModByPiash
 echo:               Github: https://github.com/lstprjct
 echo:               
 echo:            ___________________________________________________ 
 echo:                                                               
-echo:               [1] æ¿€æ´»
-echo:               [2] å†»ç»“è¯•ç”¨
-echo:               [3] é‡ç½®æ¿€æ´»/è¯•ç”¨
+echo:               [1] ¼¤»î
+echo:               [2] ¶³½áÊÔÓÃ
+echo:               [3] ÖØÖÃ¼¤»î/ÊÔÓÃ
 echo:               _____________________________________________   
 echo:                                                               
-echo:               [4] ä¸‹è½½IDM
-echo:               [5] å¸®åŠ©
-echo:               [0] é€€å‡º
+echo:               [4] ÏÂÔØIDM
+echo:               [5] °ïÖú
+echo:               [0] ÍË³ö
 echo:            ___________________________________________________
 echo:         
-call :_color2 %_White% "             " %_Green% "é€‰æ‹©é”®ç›˜ä¸Šçš„ [1,2,3,4,5,0]ä»¥æ“æ§èœå•"
+call :_color2 %_White% "             " %_Green% "Ñ¡Ôñ¼üÅÌÉÏµÄ [1,2,3,4,5,0]ÒÔ²Ù¿Ø²Ëµ¥"
 choice /C:123450 /N
 set _erl=%errorlevel%
 
@@ -433,14 +433,14 @@ call :add_key
 echo:
 echo %line%
 echo:
-call :_color %Green% "IDMé‡ç½®è¿‡ç¨‹å·²ç»å®Œæˆ."
+call :_color %Green% "IDMÖØÖÃ¹ı³ÌÒÑ¾­Íê³É."
 
 goto done
 
 :delete_queue
 
 echo:
-echo åˆ é™¤IDMæ³¨å†Œè¡¨...
+echo É¾³ıIDM×¢²á±í...
 echo:
 
 for %%# in (
@@ -485,7 +485,7 @@ set "reg=%reg:"=%"
 echo Deleted - !reg!
 ) else (
 set "reg=%reg:"=%"
-call :_color2 %Red% "å¤±è´¥ - !reg!"
+call :_color2 %Red% "Ê§°Ü - !reg!"
 )
 
 exit /b
@@ -506,20 +506,20 @@ if %frz%==0 if %_unattended%==0 (
 echo:
 echo %line%
 echo:
-echo      ä¸€äº›ç”¨æˆ·çš„æ¿€æ´»æ— æ³•æ­£å¸¸å·¥ä½œï¼ŒIDMå¯èƒ½ä¼šæ˜¾ç¤ºè™šå‡åºåˆ—å·çš„æç¤ºã€‚.
+echo      Ò»Ğ©ÓÃ»§µÄ¼¤»îÎŞ·¨Õı³£¹¤×÷£¬IDM¿ÉÄÜ»áÏÔÊ¾Ğé¼ÙĞòÁĞºÅµÄÌáÊ¾¡£.
 echo:
-call :_color2 %_White% "     " %_Green% "å»ºè®®ä½¿ç”¨å†»ç»“è¯•ç”¨é€‰é¡¹."
+call :_color2 %_White% "     " %_Green% "½¨ÒéÊ¹ÓÃ¶³½áÊÔÓÃÑ¡Ïî."
 echo %line%
 echo:
-choice /C:19 /N /M ">    [1] è¿”å› [9] æ¿€æ´» : "
+choice /C:19 /N /M ">    [1] ·µ»Ø [9] ¼¤»î : "
 if !errorlevel!==1 goto :MainMenu
 cls
 )
 
 echo:
 if not exist "%IDMan%" (
-call :_color %Red% "IDMæœªå®‰è£…."
-echo "ä½ å¯ä»¥åœ¨è¿™é‡Œä¸‹è½½" https://www.internetdownloadmanager.com/download.html
+call :_color %Red% "IDMÎ´°²×°."
+echo "Äã¿ÉÒÔÔÚÕâÀïÏÂÔØ" https://www.internetdownloadmanager.com/download.html
 goto done
 )
 
@@ -530,10 +530,10 @@ for /f "delims=[] tokens=2" %%# in ('ping -n 1 internetdownloadmanager.com') do 
 
 if not defined _int (
 %psc% "$t = New-Object Net.Sockets.TcpClient;try{$t.Connect("""internetdownloadmanager.com""", 80)}catch{};$t.Connected" | findstr /i "true" %nul1% || (
-call :_color %Red% "æ— æ³•è¿æ¥åˆ°internetdownloadmanager.comï¼Œæ­£åœ¨ä¸­æ­¢..."
+call :_color %Red% "ÎŞ·¨Á¬½Óµ½internetdownloadmanager.com£¬ÕıÔÚÖĞÖ¹..."
 goto done
 )
-call :_color %Gray% "Pingå‘½ä»¤å¯¹internetdownloadmanager.comå¤±è´¥"
+call :_color %Gray% "PingÃüÁî¶Ôinternetdownloadmanager.comÊ§°Ü"
 echo:
 )
 
@@ -577,13 +577,13 @@ echo:
 echo %line%
 echo:
 if %frz%==0 (
-call :_color %Green% "IDMæ¿€æ´»è¿‡ç¨‹å·²å®Œæˆ."
+call :_color %Green% "IDM¼¤»î¹ı³ÌÒÑÍê³É."
 echo:
-call :_color %Gray% "å¦‚æœå‡ºç°å‡åºåˆ—å·å±å¹•ï¼Œè¯·æ”¹ç”¨å†»ç»“è¯•ç”¨é€‰é¡¹."
+call :_color %Gray% "Èç¹û³öÏÖ¼ÙĞòÁĞºÅÆÁÄ»£¬Çë¸ÄÓÃ¶³½áÊÔÓÃÑ¡Ïî."
 ) else (
-call :_color %Green% "IDM 30å¤©è¯•ç”¨æœŸå·²æˆåŠŸå†»ç»“ï¼Œç»ˆèº«å…è´¹ä½¿ç”¨."
+call :_color %Green% "IDM 30ÌìÊÔÓÃÆÚÒÑ³É¹¦¶³½á£¬ÖÕÉíÃâ·ÑÊ¹ÓÃ."
 echo:
-call :_color %Gray% "å¦‚æœIDMæ˜¾ç¤ºå¼¹å‡ºçª—å£è¿›è¡Œæ³¨å†Œï¼Œè¯·é‡æ–°å®‰è£…IDM."
+call :_color %Gray% "Èç¹ûIDMÏÔÊ¾µ¯³ö´°¿Ú½øĞĞ×¢²á£¬ÇëÖØĞÂ°²×°IDM."
 )
 
 ::========================================================================================================================================
@@ -596,10 +596,10 @@ echo:
 if %_unattended%==1 timeout /t 2 & exit /b
 
 if defined terminal (
-call :_color %_Yellow% "æŒ‰0é”®è¿”å›..."
+call :_color %_Yellow% "°´0¼ü·µ»Ø..."
 choice /c 0 /n
 ) else (
-call :_color %_Yellow% "æŒ‰0ä»»æ„é”®è¿”å›..."
+call :_color %_Yellow% "°´0ÈÎÒâ¼ü·µ»Ø..."
 pause %nul1%
 )
 goto MainMenu
@@ -628,7 +628,7 @@ exit /b
 :register_IDM
 
 echo:
-echo åº”ç”¨æ³¨å†Œè¯¦æƒ…...
+echo Ó¦ÓÃ×¢²áÏêÇé...
 echo:
 
 set /a fname = %random% %% 9999 + 1000
@@ -653,7 +653,7 @@ exit /b
 :download_files
 
 echo:
-echo è§¦å‘ä¸€äº›ä¸‹è½½ä»¥åˆ›å»ºç‰¹å®šçš„æ³¨å†Œè¡¨ï¼Œè¯·ç¨å€™...
+echo ´¥·¢Ò»Ğ©ÏÂÔØÒÔ´´½¨ÌØ¶¨µÄ×¢²á±í£¬ÇëÉÔºò...
 echo:
 
 set "file=%SystemRoot%\Temp\temp.png"
@@ -691,7 +691,7 @@ goto :Check_file
 :add_key
 
 echo:
-echo æ·»åŠ æ³¨å†Œè¡¨é”®...
+echo Ìí¼Ó×¢²á±í¼ü...
 echo:
 
 set "reg="%HKLM%" /v "AdvIntDriverEnabled2""

@@ -1,3 +1,4 @@
+chcp 65001
 @set iasver=1.2
 @setlocal DisableDelayedExpansion
 @echo off
@@ -70,10 +71,10 @@ set "mas=https://github.com/lstprjct/IDM-Activation-Script/wiki/"
 sc query Null | find /i "RUNNING"
 if %errorlevel% NEQ 0 (
 echo:
-echo ¿Õ·þÎñÎ´ÔËÐÐ,½Å±¾¿ÉÄÜ»á±ÀÀ£.
+echo ï¿½Õ·ï¿½ï¿½ï¿½Î´ï¿½ï¿½ï¿½ï¿½,ï¿½Å±ï¿½ï¿½ï¿½ï¿½Ü»ï¿½ï¿½ï¿½ï¿½.
 echo:
 echo:
-echo °ïÖú - %mas%IAS-Help#troubleshoot
+echo ï¿½ï¿½ï¿½ï¿½ - %mas%IAS-Help#troubleshoot
 echo:
 echo:
 ping 127.0.0.1 -n 10
@@ -85,7 +86,7 @@ cls
 pushd "%~dp0"
 >nul findstr /v "$" "%~nx0" && (
 echo:
-echo ´íÎó:½Å±¾¿ÉÄÜ´æÔÚLFÐÐ½áÊøÎÊÌâ,»òÕß½Å±¾Ä©Î²È±ÉÙ¿ÕÐÐ.
+echo ï¿½ï¿½ï¿½ï¿½:ï¿½Å±ï¿½ï¿½ï¿½ï¿½Ü´ï¿½ï¿½ï¿½LFï¿½Ð½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ß½Å±ï¿½Ä©Î²È±ï¿½Ù¿ï¿½ï¿½ï¿½.
 echo:
 ping 127.0.0.1 -n 6 >nul
 popd
@@ -97,7 +98,7 @@ popd
 
 cls
 color 07
-title  IDM¼¤»î½Å±¾ %iasver%
+title  IDMï¿½ï¿½ï¿½ï¿½Å±ï¿½ %iasver%
 
 set _args=
 set _elev=
@@ -159,14 +160,14 @@ set "_buf={$W=$Host.UI.RawUI.WindowSize;$B=$Host.UI.RawUI.BufferSize;$W.Height=3
 
 if %winbuild% LSS 7600 (
 %nceline%
-echo ¼ì²âµ½²»Ö§³ÖµÄ²Ù×÷ÏµÍ³°æ±¾¡£ [%winbuild%].
-echo ¸ÃÏîÄ¿½öÖ§³Ö Windows 7/8/8.1/10/11 ¼°Æä·þÎñÆ÷°æ±¾.
+echo ï¿½ï¿½âµ½ï¿½ï¿½Ö§ï¿½ÖµÄ²ï¿½ï¿½ï¿½ÏµÍ³ï¿½æ±¾ï¿½ï¿½ [%winbuild%].
+echo ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½Ö§ï¿½ï¿½ Windows 7/8/8.1/10/11 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½æ±¾.
 goto done2
 )
 
 for %%# in (powershell.exe) do @if "%%~$PATH:#"=="" (
 %nceline%
-echo ÔÚÏµÍ³ÖÐÕÒ²»µ½ powershell.exe.
+echo ï¿½ï¿½ÏµÍ³ï¿½ï¿½ï¿½Ò²ï¿½ï¿½ï¿½ powershell.exe.
 goto done2
 )
 
@@ -193,10 +194,10 @@ setlocal EnableDelayedExpansion
 echo "!_batf!" | find /i "!_ttemp!" %nul1% && (
 if /i not "!_work!"=="!_ttemp!" (
 %eline%
-echo ½Å±¾ÊÇ´ÓÁÙÊ±ÎÄ¼þ¼ÐÖÐÆô¶¯µÄ.
-echo ºÜ¿ÉÄÜÄúÊÇÖ±½Ó´Ó´æµµÎÄ¼þÖÐÔËÐÐ½Å±¾.
+echo ï¿½Å±ï¿½ï¿½Ç´ï¿½ï¿½ï¿½Ê±ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.
+echo ï¿½Ü¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö±ï¿½Ó´Ó´æµµï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð½Å±ï¿½.
 echo:
-echo ÌáÈ¡´æµµÎÄ¼þ£¬²¢´ÓÌáÈ¡µÄÎÄ¼þ¼ÐÖÐÆô¶¯½Å±¾.
+echo ï¿½ï¿½È¡ï¿½æµµï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¡ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å±ï¿½.
 goto done2
 )
 )
@@ -211,10 +212,10 @@ REM :PowerShellTest: $ExecutionContext.SessionState.LanguageMode :PowerShellTest
 %eline%
 %psc% $ExecutionContext.SessionState.LanguageMode
 echo:
-echo PowerShellÎÞ·¨Õý³£¹¤×÷¡£ÖÕÖ¹²Ù×÷¡­
-echo Èç¹ûÄú¶ÔPowerShellÓ¦ÓÃÁËÏÞÖÆ,Çë³·ÏúÕâÐ©¸ü¸Ä.
+echo PowerShellï¿½Þ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+echo ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½PowerShellÓ¦ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,ï¿½ë³·ï¿½ï¿½ï¿½ï¿½Ð©ï¿½ï¿½ï¿½ï¿½.
 echo:
-echo Çë¼ì²éÕâ¸öÒ³ÃæÒÔ»ñÈ¡°ïÖú. %mas%IAS-Help#troubleshoot
+echo ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò³ï¿½ï¿½ï¿½Ô»ï¿½È¡ï¿½ï¿½ï¿½ï¿½. %mas%IAS-Help#troubleshoot
 goto done2
 )
 
@@ -225,8 +226,8 @@ goto done2
 %nul1% fltmc || (
 if not defined _elev %psc% "start cmd.exe -arg '/c \"!_PSarg!\"' -verb runas" && exit /b
 %eline%
-echo Õâ¸ö½Å±¾ÐèÒª¹ÜÀíÔ±È¨ÏÞ¡£
-echo ÒªÕâÑù×ö£¬ÇëÓÒ¼üµ¥»÷´Ë½Å±¾£¬È»ºóÑ¡Ôñ¡°ÒÔ¹ÜÀíÔ±Éí·ÝÔËÐÐ¡±.
+echo ï¿½ï¿½ï¿½ï¿½Å±ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½Ô±È¨ï¿½Þ¡ï¿½
+echo Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë½Å±ï¿½ï¿½ï¿½È»ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½Ô¹ï¿½ï¿½ï¿½Ô±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¡ï¿½.
 goto done2
 )
 
@@ -266,10 +267,10 @@ if defined quedit goto :skipQE
 ::========================================================================================================================================
 
 cls
-title  IDM¼¤»î½Å±¾ %iasver%
+title  IDMï¿½ï¿½ï¿½ï¿½Å±ï¿½ %iasver%
 
 echo:
-echo ³õÊ¼»¯ÖÐ...
+echo ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½...
 
 ::  Check WMI
 
@@ -277,9 +278,9 @@ echo ³õÊ¼»¯ÖÐ...
 %eline%
 %psc% "Get-WmiObject -Class Win32_ComputerSystem | Select-Object -Property CreationClassName"
 echo:
-echo WMIÎ´ÄÜ¹¤×÷¡£ÖÐÖ¹...
+echo WMIÎ´ï¿½Ü¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¹...
 echo:
-echo Çë²é¿´´ËÒ³ÃæÒÔ»ñÈ¡°ïÖú¡£%mas%IAS-Help#troubleshoot
+echo ï¿½ï¿½é¿´ï¿½ï¿½Ò³ï¿½ï¿½ï¿½Ô»ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½%mas%IAS-Help#troubleshoot
 goto done2
 )
 
@@ -296,9 +297,9 @@ reg query HKU\%_sid%\Software %nul% || (
 %eline%
 echo:
 echo [%_sid%]
-echo ÓÃ»§ÕË»§SIDÎ´ÕÒµ½¡£ÖÐÖ¹...
+echo ï¿½Ã»ï¿½ï¿½Ë»ï¿½SIDÎ´ï¿½Òµï¿½ï¿½ï¿½ï¿½ï¿½Ö¹...
 echo:
-echo Çë¼ì²é´ËÒ³ÃæÒÔ»ñÈ¡°ïÖú¡£%mas%IAS-Help#troubleshoot
+echo ï¿½ï¿½ï¿½ï¿½ï¿½Ò³ï¿½ï¿½ï¿½Ô»ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½%mas%IAS-Help#troubleshoot
 goto done2
 )
 
@@ -348,9 +349,9 @@ set "idmcheck=tasklist /fi "imagename eq idman.exe" | findstr /i "idman.exe" %nu
 %nul% reg add %CLSID2%\IAS_TEST
 %nul% reg query %CLSID2%\IAS_TEST || (
 %eline%
-echo ÎÞ·¨Ð´Èë %CLSID2%
+echo ï¿½Þ·ï¿½Ð´ï¿½ï¿½ %CLSID2%
 echo:
-echo Çë¼ì²é´ËÒ³ÃæÒÔ»ñÈ¡°ïÖú¡£$mas$IAS-Help#troubleshoot
+echo ï¿½ï¿½ï¿½ï¿½ï¿½Ò³ï¿½ï¿½ï¿½Ô»ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½$mas$IAS-Help#troubleshoot
 goto done2
 )
 
@@ -365,30 +366,30 @@ if %_freeze%==1 (set frz=1&goto :_activate)
 :MainMenu
 
 cls
-title  IDM¼¤»î½Å±¾ %iasver%
+title  IDMï¿½ï¿½ï¿½ï¿½Å±ï¿½ %iasver%
 if not defined terminal mode 75, 28
 
 echo:
 echo:
-call :_color2 %_White% "             " %_Green% "¹¹½¨ By Piash"
+call :_color2 %_White% "             " %_Green% "ï¿½ï¿½ï¿½ï¿½ By Piash"
 echo:            ___________________________________________________ 
 echo:
-echo:               ·­Òëby:https://github.com/jiangbeichen233
+echo:               ï¿½ï¿½ï¿½ï¿½by:https://github.com/jiangbeichen233
 echo:               Telegram: @ModByPiash
 echo:               Github: https://github.com/lstprjct
 echo:            ___________________________________________________ 
 echo:                                                               
-echo:               [1] ¼¤»î
-echo:               [2] ¶³½áÊÔÓÃ
-echo:               [3] ÖØÖÃ¼¤»î/ÊÔÓÃ
+echo:               [1] ï¿½ï¿½ï¿½ï¿½
+echo:               [2] ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+echo:               [3] ï¿½ï¿½ï¿½Ã¼ï¿½ï¿½ï¿½/ï¿½ï¿½ï¿½ï¿½
 echo:               _____________________________________________   
 echo:                                                               
-echo:               [4] ÏÂÔØ IDM
-echo:               [5] °ïÖú
-echo:               [0] ·µ»Ø
+echo:               [4] ï¿½ï¿½ï¿½ï¿½ IDM
+echo:               [5] ï¿½ï¿½ï¿½ï¿½
+echo:               [0] ï¿½ï¿½ï¿½ï¿½
 echo:            ___________________________________________________
 echo:         
-call :_color2 %_White% "             " %_Red% "µã»÷¼üÅÌÉÏµÄ[1,2,3,4,5,0]ÒÔ²Ù¿Ø²Ëµ¥"
+call :_color2 %_White% "             " %_Red% "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ïµï¿½[1,2,3,4,5,0]ï¿½Ô²Ù¿Ø²Ëµï¿½"
 choice /C:123450 /N
 set _erl=%errorlevel%
 
@@ -432,14 +433,14 @@ call :add_key
 echo:
 echo %line%
 echo:
-call :_color %Green% "IDM ÖØÖÃ¹ý³ÌÒÑÍê³É."
+call :_color %Green% "IDM ï¿½ï¿½ï¿½Ã¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½."
 
 goto done
 
 :delete_queue
 
 echo:
-echo É¾³ýIDM×¢²á±íÖÐ...
+echo É¾ï¿½ï¿½IDM×¢ï¿½ï¿½ï¿½ï¿½ï¿½...
 echo:
 
 for %%# in (
@@ -505,20 +506,20 @@ if %frz%==0 if %_unattended%==0 (
 echo:
 echo %line%
 echo:
-echo      Ò»Ð©ÓÃ»§µÄ¼¤»î³öÏÖÎÊÌâ,IDM¿ÉÄÜ»áÏÔÊ¾Ðé¼ÙµÄÐòÁÐºÅÌáÊ¾´°¿Ú.
+echo      Ò»Ð©ï¿½Ã»ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,IDMï¿½ï¿½ï¿½Ü»ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½Ùµï¿½ï¿½ï¿½ï¿½Ðºï¿½ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½.
 echo:
-call :_color2 %_White% "     " %_Green% "½¨ÒéÊ¹ÓÃ¡°¶³½áÊÔÓÃ¡±Ñ¡Ïî."
+call :_color2 %_White% "     " %_Green% "ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½Ã¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã¡ï¿½Ñ¡ï¿½ï¿½."
 echo %line%
 echo:
-choice /C:19 /N /M ">    [1] ·µ»Ø [9] ¼¤»î : "
+choice /C:19 /N /M ">    [1] ï¿½ï¿½ï¿½ï¿½ [9] ï¿½ï¿½ï¿½ï¿½ : "
 if !errorlevel!==1 goto :MainMenu
 cls
 )
 
 echo:
 if not exist "%IDMan%" (
-call :_color %Red% "IDM Î´°²×°."
-echo Äã¿ÉÒÔµã»÷ÕâÀïÏÂÔØ  https://www.internetdownloadmanager.com/download.html
+call :_color %Red% "IDM Î´ï¿½ï¿½×°."
+echo ï¿½ï¿½ï¿½ï¿½Ôµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  https://www.internetdownloadmanager.com/download.html
 goto done
 )
 
@@ -529,10 +530,10 @@ for /f "delims=[] tokens=2" %%# in ('ping -n 1 internetdownloadmanager.com') do 
 
 if not defined _int (
 %psc% "$t = New-Object Net.Sockets.TcpClient;try{$t.Connect("""internetdownloadmanager.com""", 80)}catch{};$t.Connected" | findstr /i "true" %nul1% || (
-call :_color %Red% "ÎÞ·¨Á¬½Óinternetdownloadmanager.com,ÒÑÖÐÖ¹²Ù×÷¡£"
+call :_color %Red% "ï¿½Þ·ï¿½ï¿½ï¿½ï¿½ï¿½internetdownloadmanager.com,ï¿½ï¿½ï¿½ï¿½Ö¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"
 goto done
 )
-call :_color %Gray% "internetdownloadmanager.com µÄ ping ÃüÁîÊ§°Ü¡£"
+call :_color %Gray% "internetdownloadmanager.com ï¿½ï¿½ ping ï¿½ï¿½ï¿½ï¿½Ê§ï¿½Ü¡ï¿½"
 echo:
 )
 
@@ -541,7 +542,7 @@ for /f "skip=2 tokens=2*" %%a in ('reg query "HKLM\SYSTEM\CurrentControlSet\Cont
 for /f "tokens=6-7 delims=[]. " %%i in ('ver') do if "%%j"=="" (set fullbuild=%%i) else (set fullbuild=%%i.%%j)
 for /f "tokens=2*" %%a in ('reg query "HKU\%_sid%\Software\DownloadManager" /v idmvers %nul6%') do set "IDMver=%%b"
 
-echo ¼ì²éÐÅÏ¢ - [%regwinos% ^| %fullbuild% ^| %regarch% ^| IDM: %IDMver%]
+echo ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ - [%regwinos% ^| %fullbuild% ^| %regarch% ^| IDM: %IDMver%]
 
 %idmcheck% && (echo: & taskkill /f /im idman.exe)
 
@@ -549,7 +550,7 @@ set _time=
 for /f %%a in ('%psc% "(Get-Date).ToString('yyyyMMdd-HHmmssfff')"') do set _time=%%a
 
 echo:
-echo ÔÚ´´½¨ CLSID ×¢²á±í¼üµÄ±¸·Ý %SystemRoot%\Temp
+echo ï¿½Ú´ï¿½ï¿½ï¿½ CLSID ×¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä±ï¿½ï¿½ï¿½ %SystemRoot%\Temp
 
 reg export %CLSID% "%SystemRoot%\Temp\_Backup_HKCU_CLSID_%_time%.reg"
 if not %HKCUsync%==1 reg export %CLSID2% "%SystemRoot%\Temp\_Backup_HKU-%_sid%_CLSID_%_time%.reg"
@@ -564,9 +565,9 @@ if %frz%==0 call :register_IDM
 call :download_files
 if not defined _fileexist (
 %eline%
-echo ´íÎó£ºÎÞ·¨Ê¹ÓÃ IDM ÏÂÔØÎÄ¼þ.
+echo ï¿½ï¿½ï¿½ï¿½ï¿½Þ·ï¿½Ê¹ï¿½ï¿½ IDM ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½.
 echo:
-echo °ïÖú: %mas%IAS-Help#troubleshoot
+echo ï¿½ï¿½ï¿½ï¿½: %mas%IAS-Help#troubleshoot
 goto :done
 )
 
@@ -576,13 +577,13 @@ echo:
 echo %line%
 echo:
 if %frz%==0 (
-call :_color %Green% "IDM ¼¤»î¹ý³ÌÒÑÍê³É¡£"
+call :_color %Green% "IDM ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É¡ï¿½"
 echo:
-call :_color %Gray% "Èç¹û³öÏÖ¼ÙÐòÁÐºÅÆÁÄ»£¬ÇëÊ¹ÓÃ¶³½áÊÔÓÃÑ¡Ïî¡£"
+call :_color %Gray% "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½ï¿½Ðºï¿½ï¿½ï¿½Ä»ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½Ã¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½î¡£"
 ) else (
-call :_color %Green% "IDM µÄ 30 ÌìÊÔÓÃÆÚÒÑ³É¹¦ÓÀ¾Ã¶³½á¡£"
+call :_color %Green% "IDM ï¿½ï¿½ 30 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ³É¹ï¿½ï¿½ï¿½ï¿½Ã¶ï¿½ï¿½á¡£"
 echo:
-call :_color %Gray% "Èç¹û IDM µ¯³ö×¢²á´°¿Ú£¬ÇëÖØÐÂ°²×° IDM¡£"
+call :_color %Gray% "ï¿½ï¿½ï¿½ IDM ï¿½ï¿½ï¿½ï¿½×¢ï¿½á´°ï¿½Ú£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â°ï¿½×° IDMï¿½ï¿½"
 )
 
 ::========================================================================================================================================
@@ -595,10 +596,10 @@ echo:
 if %_unattended%==1 timeout /t 2 & exit /b
 
 if defined terminal (
-call :_color %_Yellow% "°´ÏÂ0¼ü·µ»Ø..."
+call :_color %_Yellow% "ï¿½ï¿½ï¿½ï¿½0ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½..."
 choice /c 0 /n
 ) else (
-call :_color %_Yellow% "°´ÏÂÈÎÒâ¼ü·µ»Ø..."
+call :_color %_Yellow% "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½..."
 pause %nul1%
 )
 goto MainMenu
@@ -608,10 +609,10 @@ goto MainMenu
 if %_unattended%==1 timeout /t 2 & exit /b
 
 if defined terminal (
-echo °´ÏÂ0¼ü·µ»Ø...
+echo ï¿½ï¿½ï¿½ï¿½0ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½...
 choice /c 0 /n
 ) else (
-echo °´ÏÂÈÎÒâ¼ü·µ»Ø...
+echo ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½...
 pause %nul1%
 )
 exit /b
@@ -627,7 +628,7 @@ exit /b
 :register_IDM
 
 echo:
-echo Ó¦ÓÃ×¢²áÏêÇéÖÐ...
+echo Ó¦ï¿½ï¿½×¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½...
 echo:
 
 set /a fname = %random% %% 9999 + 1000
@@ -652,7 +653,7 @@ exit /b
 :download_files
 
 echo:
-echo ÕýÔÚ´¥·¢¼¸´ÎÏÂÔØÒÔ´´½¨ÌØ¶¨µÄ×¢²á±í£¬ÇëÉÔºò...
+echo ï¿½ï¿½ï¿½Ú´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô´ï¿½ï¿½ï¿½ï¿½Ø¶ï¿½ï¿½ï¿½×¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ôºï¿½...
 echo:
 
 set "file=%SystemRoot%\Temp\temp.png"
@@ -690,7 +691,7 @@ goto :Check_file
 :add_key
 
 echo:
-echo ÕýÔÚÌí¼Ó×¢²á±í...
+echo ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×¢ï¿½ï¿½ï¿½...
 echo:
 
 set "reg="%HKLM%" /v "AdvIntDriverEnabled2""
@@ -726,7 +727,7 @@ foreach ($regPath in $regPaths) {
     }
 	
 	Write-Host
-	Write-Host "ÔÚ $regPath ÖÐËÑË÷ IDM CLSID ×¢²á±í¼ü "
+	Write-Host "ï¿½ï¿½ $regPath ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ IDM CLSID ×¢ï¿½ï¿½ï¿½ï¿½ï¿½ "
 	Write-Host
 	
     $subKeys = Get-ChildItem -Path $regPath -ErrorAction SilentlyContinue -ErrorVariable lockedKeys | Where-Object { $_.PSChildName -match '^\{[A-F0-9]{8}-[A-F0-9]{4}-[A-F0-9]{4}-[A-F0-9]{4}-[A-F0-9]{12}\}$' }
@@ -734,7 +735,7 @@ foreach ($regPath in $regPaths) {
     foreach ($lockedKey in $lockedKeys) {
         $leafValue = Split-Path -Path $lockedKey.TargetObject -Leaf
         $finalValues += $leafValue
-        Write-Output "$leafValue - ÔÚÕÒµ½Ëø¶¨µÄ¼ü"
+        Write-Output "$leafValue - ï¿½ï¿½ï¿½Òµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½"
     }
 
     if ($subKeys -eq $null) {
@@ -786,21 +787,21 @@ $finalValues = @($finalValues | Select-Object -Unique)
 if ($finalValues -ne $null) {
     Write-Host
     if ($lockKey -ne $null) {
-        Write-Host "Ëø¶¨ IDM CLSID ×¢²á±í¼üÖÐ...."
+        Write-Host "ï¿½ï¿½ï¿½ï¿½ IDM CLSID ×¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½...."
     }
     if ($deleteKey -ne $null) {
-        Write-Host "É¾³ý IDM CLSID ×¢²á±í¼üÖÐ..."
+        Write-Host "É¾ï¿½ï¿½ IDM CLSID ×¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½..."
     }
     Write-Host
 } else {
-    Write-Host "Î´ÕÒµ½ IDM CLSID ×¢²á±í¼ü."
+    Write-Host "Î´ï¿½Òµï¿½ IDM CLSID ×¢ï¿½ï¿½ï¿½ï¿½ï¿½."
 	Exit
 }
 
 if (($finalValues.Count -gt 20) -and ($toggle -ne $null)) {
 	$lockKey = $null
 	$deleteKey = 1
-    Write-Host "IDM ×¢²á±íµÄÊýÁ¿³¬¹ý 20 ¸ö¡£ÏÖÔÚÉ¾³ýËüÃÇ£¬¶ø²»ÊÇËø¶¨ËüÃÇ..."
+    Write-Host "IDM ×¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 20 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É¾ï¿½ï¿½ï¿½ï¿½ï¿½Ç£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½..."
 	Write-Host
 }
 
@@ -863,10 +864,10 @@ foreach ($regPath in $regPaths) {
             Take-Permissions $rootKey $regKey
             try {
                 Remove-Item -Path $fullPath -Force -Recurse -ErrorAction Stop
-                Write-Host -back 'DarkRed' -fore 'white' "Ê§°Ü $fullPath"
+                Write-Host -back 'DarkRed' -fore 'white' "Ê§ï¿½ï¿½ $fullPath"
             }
             catch {
-                Write-Host "Ëø¶¨ - $fullPath"
+                Write-Host "ï¿½ï¿½ï¿½ï¿½ - $fullPath"
             }
         }
 
@@ -877,7 +878,7 @@ foreach ($regPath in $regPaths) {
                     Take-Permissions $rootKey $regKey
                     try {
                         Remove-Item -Path $fullPath -Force -Recurse -ErrorAction Stop
-                        Write-Host "É¾³ý - $fullPath"
+                        Write-Host "É¾ï¿½ï¿½ - $fullPath"
                     }
                     catch {
                         Write-Host -back 'DarkRed' -fore 'white' "Failed - $fullPath"

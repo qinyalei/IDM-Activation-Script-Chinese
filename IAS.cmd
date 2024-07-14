@@ -70,10 +70,10 @@ set "mas=https://github.com/lstprjct/IDM-Activation-Script/wiki/"
 sc query Null | find /i "RUNNING"
 if %errorlevel% NEQ 0 (
 echo:
-echo Null service is not running, script may crash...
+echo 空服务未运行,脚本可能会崩溃.
 echo:
 echo:
-echo Help - %mas%IAS-Help#troubleshoot
+echo 帮助 - %mas%IAS-Help#troubleshoot
 echo:
 echo:
 ping 127.0.0.1 -n 10
@@ -85,7 +85,7 @@ cls
 pushd "%~dp0"
 >nul findstr /v "$" "%~nx0" && (
 echo:
-echo Error: Script either has LF line ending issue or an empty line at the end of the script is missing.
+echo 错误:脚本可能存在LF行结束问题,或者脚本末尾缺少空行.
 echo:
 ping 127.0.0.1 -n 6 >nul
 popd
@@ -97,7 +97,7 @@ popd
 
 cls
 color 07
-title  IDM Activation Script %iasver%
+title  IDM激活脚本 %iasver%
 
 set _args=
 set _elev=
@@ -159,14 +159,14 @@ set "_buf={$W=$Host.UI.RawUI.WindowSize;$B=$Host.UI.RawUI.BufferSize;$W.Height=3
 
 if %winbuild% LSS 7600 (
 %nceline%
-echo Unsupported OS version Detected [%winbuild%].
-echo Project is supported only for Windows 7/8/8.1/10/11 and their Server equivalent.
+echo 检测到不支持的操作系统版本。 [%winbuild%].
+echo 该项目仅支持 Windows 7/8/8.1/10/11 及其服务器版本.
 goto done2
 )
 
 for %%# in (powershell.exe) do @if "%%~$PATH:#"=="" (
 %nceline%
-echo Unable to find powershell.exe in the system.
+echo 在系统中找不到 powershell.exe.
 goto done2
 )
 
@@ -193,10 +193,10 @@ setlocal EnableDelayedExpansion
 echo "!_batf!" | find /i "!_ttemp!" %nul1% && (
 if /i not "!_work!"=="!_ttemp!" (
 %eline%
-echo Script is launched from the temp folder,
-echo Most likely you are running the script directly from the archive file.
+echo 脚本是从临时文件夹中启动的.
+echo 很可能您是直接从存档文件中运行脚本.
 echo:
-echo Extract the archive file and launch the script from the extracted folder.
+echo 提取存档文件，并从提取的文件夹中启动脚本.
 goto done2
 )
 )
@@ -211,10 +211,10 @@ REM :PowerShellTest: $ExecutionContext.SessionState.LanguageMode :PowerShellTest
 %eline%
 %psc% $ExecutionContext.SessionState.LanguageMode
 echo:
-echo PowerShell is not working. Aborting...
-echo If you have applied restrictions on Powershell then undo those changes.
+echo PowerShell无法正常工作。终止操作…
+echo 如果您对PowerShell应用了限制,请撤销这些更改.
 echo:
-echo Check this page for help. %mas%IAS-Help#troubleshoot
+echo 请检查这个页面以获取帮助. %mas%IAS-Help#troubleshoot
 goto done2
 )
 
@@ -225,8 +225,8 @@ goto done2
 %nul1% fltmc || (
 if not defined _elev %psc% "start cmd.exe -arg '/c \"!_PSarg!\"' -verb runas" && exit /b
 %eline%
-echo This script requires admin privileges.
-echo To do so, right click on this script and select 'Run as administrator'.
+echo 这个脚本需要管理员权限。
+echo 要这样做，请右键单击此脚本，然后选择“以管理员身份运行”.
 goto done2
 )
 
@@ -266,10 +266,10 @@ if defined quedit goto :skipQE
 ::========================================================================================================================================
 
 cls
-title  IDM Activation Script %iasver%
+title  IDM激活脚本 %iasver%
 
 echo:
-echo Initializing...
+echo 初始化中...
 
 ::  Check WMI
 
@@ -277,9 +277,9 @@ echo Initializing...
 %eline%
 %psc% "Get-WmiObject -Class Win32_ComputerSystem | Select-Object -Property CreationClassName"
 echo:
-echo WMI is not working. Aborting...
+echo WMI未能工作。中止...
 echo:
-echo Check this page for help. %mas%IAS-Help#troubleshoot
+echo 请查看此页面以获取帮助。%mas%IAS-Help#troubleshoot
 goto done2
 )
 
@@ -296,9 +296,9 @@ reg query HKU\%_sid%\Software %nul% || (
 %eline%
 echo:
 echo [%_sid%]
-echo User Account SID not found. Aborting...
+echo 用户账户SID未找到。中止...
 echo:
-echo Check this page for help. %mas%IAS-Help#troubleshoot
+echo 请检查此页面以获取帮助。%mas%IAS-Help#troubleshoot
 goto done2
 )
 
@@ -348,9 +348,9 @@ set "idmcheck=tasklist /fi "imagename eq idman.exe" | findstr /i "idman.exe" %nu
 %nul% reg add %CLSID2%\IAS_TEST
 %nul% reg query %CLSID2%\IAS_TEST || (
 %eline%
-echo Failed to write in %CLSID2%
+echo 无法写入 %CLSID2%
 echo:
-echo Check this page for help. %mas%IAS-Help#troubleshoot
+echo 请检查此页面以获取帮助。$mas$IAS-Help#troubleshoot
 goto done2
 )
 
@@ -365,34 +365,35 @@ if %_freeze%==1 (set frz=1&goto :_activate)
 :MainMenu
 
 cls
-title  IDM Activation Script %iasver%
+title  IDM激活脚本 %iasver%
 if not defined terminal mode 75, 28
 
 echo:
 echo:
-call :_color2 %_White% "             " %_Green% "Create By Piash"
+call :_color2 %_White% "             " %_Green% "构建 By Piash"
 echo:            ___________________________________________________ 
 echo:
+echo:               翻译by:https://github.com/jiangbeichen233
 echo:               Telegram: @ModByPiash
 echo:               Github: https://github.com/lstprjct
 echo:            ___________________________________________________ 
 echo:                                                               
-echo:               [1] Activate
-echo:               [2] Freeze Trial
-echo:               [3] Reset Activation / Trial
+echo:               [1] 激活
+echo:               [2] 冻结试用
+echo:               [3] 重置激活/试用
 echo:               _____________________________________________   
 echo:                                                               
-echo:               [4] Download IDM
-echo:               [5] Help
-echo:               [0] Exit
+echo:               [4] 下载 IDM
+echo:               [5] 帮助
+echo:               [0] 返回
 echo:            ___________________________________________________
 echo:         
-call :_color2 %_White% "             " %_Green% "Enter a menu option in the Keyboard [1,2,3,4,5,0]"
+call :_color2 %_White% "             " %_Red% "点击键盘上的[1,2,3,4,5,0]以操控菜单"
 choice /C:123450 /N
 set _erl=%errorlevel%
 
 if %_erl%==6 exit /b
-if %_erl%==5 start https://github.com/lstprjct/IDM-Activation-Script & goto MainMenu
+if %_erl%==5 start https://github.com/jiangbeichen233/IDM-Activation-Script-Chinese & goto MainMenu
 if %_erl%==4 start https://www.internetdownloadmanager.com/download.html & goto MainMenu
 if %_erl%==3 goto _reset
 if %_erl%==2 (set frz=1&goto :_activate)
@@ -431,14 +432,14 @@ call :add_key
 echo:
 echo %line%
 echo:
-call :_color %Green% "The IDM reset process has been completed."
+call :_color %Green% "IDM 重置过程已完成."
 
 goto done
 
 :delete_queue
 
 echo:
-echo Deleting IDM registry keys...
+echo 删除IDM注册表中...
 echo:
 
 for %%# in (
@@ -504,20 +505,20 @@ if %frz%==0 if %_unattended%==0 (
 echo:
 echo %line%
 echo:
-echo      Activation is not working for some users and IDM may show fake serial nag screen.
+echo      一些用户的激活出现问题,IDM可能会显示虚假的序列号提示窗口.
 echo:
-call :_color2 %_White% "     " %_Green% "Its recommended to use Freeze Trial option instead."
+call :_color2 %_White% "     " %_Green% "建议使用“冻结试用”选项."
 echo %line%
 echo:
-choice /C:19 /N /M ">    [1] Go Back [9] Activate : "
+choice /C:19 /N /M ">    [1] 返回 [9] 激活 : "
 if !errorlevel!==1 goto :MainMenu
 cls
 )
 
 echo:
 if not exist "%IDMan%" (
-call :_color %Red% "IDM [Internet Download Manager] is not Installed."
-echo You can download it from  https://www.internetdownloadmanager.com/download.html
+call :_color %Red% "IDM 未安装."
+echo 你可以点击这里下载  https://www.internetdownloadmanager.com/download.html
 goto done
 )
 
@@ -528,10 +529,10 @@ for /f "delims=[] tokens=2" %%# in ('ping -n 1 internetdownloadmanager.com') do 
 
 if not defined _int (
 %psc% "$t = New-Object Net.Sockets.TcpClient;try{$t.Connect("""internetdownloadmanager.com""", 80)}catch{};$t.Connected" | findstr /i "true" %nul1% || (
-call :_color %Red% "Unable to connect internetdownloadmanager.com, aborting..."
+call :_color %Red% "无法连接internetdownloadmanager.com,已中止操作。"
 goto done
 )
-call :_color %Gray% "Ping command failed for internetdownloadmanager.com"
+call :_color %Gray% "internetdownloadmanager.com 的 ping 命令失败。"
 echo:
 )
 
@@ -540,7 +541,7 @@ for /f "skip=2 tokens=2*" %%a in ('reg query "HKLM\SYSTEM\CurrentControlSet\Cont
 for /f "tokens=6-7 delims=[]. " %%i in ('ver') do if "%%j"=="" (set fullbuild=%%i) else (set fullbuild=%%i.%%j)
 for /f "tokens=2*" %%a in ('reg query "HKU\%_sid%\Software\DownloadManager" /v idmvers %nul6%') do set "IDMver=%%b"
 
-echo Checking Info - [%regwinos% ^| %fullbuild% ^| %regarch% ^| IDM: %IDMver%]
+echo 检查信息 - [%regwinos% ^| %fullbuild% ^| %regarch% ^| IDM: %IDMver%]
 
 %idmcheck% && (echo: & taskkill /f /im idman.exe)
 
@@ -548,7 +549,7 @@ set _time=
 for /f %%a in ('%psc% "(Get-Date).ToString('yyyyMMdd-HHmmssfff')"') do set _time=%%a
 
 echo:
-echo Creating backup of CLSID registry keys in %SystemRoot%\Temp
+echo 在创建 CLSID 注册表键的备份 %SystemRoot%\Temp
 
 reg export %CLSID% "%SystemRoot%\Temp\_Backup_HKCU_CLSID_%_time%.reg"
 if not %HKCUsync%==1 reg export %CLSID2% "%SystemRoot%\Temp\_Backup_HKU-%_sid%_CLSID_%_time%.reg"
@@ -563,9 +564,9 @@ if %frz%==0 call :register_IDM
 call :download_files
 if not defined _fileexist (
 %eline%
-echo Error: Unable to download files with IDM.
+echo 错误：无法使用 IDM 下载文件.
 echo:
-echo Help: %mas%IAS-Help#troubleshoot
+echo 帮助: %mas%IAS-Help#troubleshoot
 goto :done
 )
 
@@ -575,13 +576,13 @@ echo:
 echo %line%
 echo:
 if %frz%==0 (
-call :_color %Green% "The IDM Activation process has been completed."
+call :_color %Green% "IDM 激活过程已完成。"
 echo:
-call :_color %Gray% "If the fake serial screen appears, use the Freeze Trial option instead."
+call :_color %Gray% "如果出现假序列号屏幕，请使用冻结试用选项。"
 ) else (
-call :_color %Green% "The IDM 30 days trial period is successfully freezed for Lifetime."
+call :_color %Green% "IDM 的 30 天试用期已成功永久冻结。"
 echo:
-call :_color %Gray% "If IDM is showing a popup to register, reinstall IDM."
+call :_color %Gray% "如果 IDM 弹出注册窗口，请重新安装 IDM。"
 )
 
 ::========================================================================================================================================
@@ -594,10 +595,10 @@ echo:
 if %_unattended%==1 timeout /t 2 & exit /b
 
 if defined terminal (
-call :_color %_Yellow% "Press 0 key to return..."
+call :_color %_Yellow% "按下0键返回..."
 choice /c 0 /n
 ) else (
-call :_color %_Yellow% "Press any key to return..."
+call :_color %_Yellow% "按下任意键返回..."
 pause %nul1%
 )
 goto MainMenu
@@ -607,10 +608,10 @@ goto MainMenu
 if %_unattended%==1 timeout /t 2 & exit /b
 
 if defined terminal (
-echo Press 0 key to exit...
+echo 按下0键返回...
 choice /c 0 /n
 ) else (
-echo Press any key to exit...
+echo 按下任意键返回...
 pause %nul1%
 )
 exit /b
@@ -626,7 +627,7 @@ exit /b
 :register_IDM
 
 echo:
-echo Applying registration details...
+echo 应用注册详情中...
 echo:
 
 set /a fname = %random% %% 9999 + 1000
@@ -651,7 +652,7 @@ exit /b
 :download_files
 
 echo:
-echo Triggering a few downloads to create certain registry keys, please wait...
+echo 正在触发几次下载以创建特定的注册表，请稍候...
 echo:
 
 set "file=%SystemRoot%\Temp\temp.png"
@@ -689,7 +690,7 @@ goto :Check_file
 :add_key
 
 echo:
-echo Adding registry key...
+echo 正在添加注册表...
 echo:
 
 set "reg="%HKLM%" /v "AdvIntDriverEnabled2""
@@ -725,7 +726,7 @@ foreach ($regPath in $regPaths) {
     }
 	
 	Write-Host
-	Write-Host "Searching IDM CLSID Registry Keys in $regPath"
+	Write-Host "在 $regPath 中搜索 IDM CLSID 注册表键 "
 	Write-Host
 	
     $subKeys = Get-ChildItem -Path $regPath -ErrorAction SilentlyContinue -ErrorVariable lockedKeys | Where-Object { $_.PSChildName -match '^\{[A-F0-9]{8}-[A-F0-9]{4}-[A-F0-9]{4}-[A-F0-9]{4}-[A-F0-9]{12}\}$' }
@@ -733,7 +734,7 @@ foreach ($regPath in $regPaths) {
     foreach ($lockedKey in $lockedKeys) {
         $leafValue = Split-Path -Path $lockedKey.TargetObject -Leaf
         $finalValues += $leafValue
-        Write-Output "$leafValue - Found Locked Key"
+        Write-Output "$leafValue - 在找到锁定的键"
     }
 
     if ($subKeys -eq $null) {
@@ -785,21 +786,21 @@ $finalValues = @($finalValues | Select-Object -Unique)
 if ($finalValues -ne $null) {
     Write-Host
     if ($lockKey -ne $null) {
-        Write-Host "Locking IDM CLSID Registry Keys..."
+        Write-Host "锁定 IDM CLSID 注册表键中...."
     }
     if ($deleteKey -ne $null) {
-        Write-Host "Deleting IDM CLSID Registry Keys..."
+        Write-Host "删除 IDM CLSID 注册表键中..."
     }
     Write-Host
 } else {
-    Write-Host "IDM CLSID Registry Keys are not found."
+    Write-Host "未找到 IDM CLSID 注册表键."
 	Exit
 }
 
 if (($finalValues.Count -gt 20) -and ($toggle -ne $null)) {
 	$lockKey = $null
 	$deleteKey = 1
-    Write-Host "The IDM keys count is more than 20. Deleting them now instead of locking..."
+    Write-Host "IDM 注册表的数量超过 20 个。现在删除它们，而不是锁定它们..."
 	Write-Host
 }
 
@@ -862,10 +863,10 @@ foreach ($regPath in $regPaths) {
             Take-Permissions $rootKey $regKey
             try {
                 Remove-Item -Path $fullPath -Force -Recurse -ErrorAction Stop
-                Write-Host -back 'DarkRed' -fore 'white' "Failed - $fullPath"
+                Write-Host -back 'DarkRed' -fore 'white' "失败 $fullPath"
             }
             catch {
-                Write-Host "Locked - $fullPath"
+                Write-Host "锁定 - $fullPath"
             }
         }
 
@@ -876,14 +877,14 @@ foreach ($regPath in $regPaths) {
                     Take-Permissions $rootKey $regKey
                     try {
                         Remove-Item -Path $fullPath -Force -Recurse -ErrorAction Stop
-                        Write-Host "Deleted - $fullPath"
+                        Write-Host "删除 - $fullPath"
                     }
                     catch {
                         Write-Host -back 'DarkRed' -fore 'white' "Failed - $fullPath"
                     }
                 }
                 else {
-                    Write-Host "Deleted - $fullPath"
+                    Write-Host "shanchu1 - $fullPath"
                 }
             }
         }

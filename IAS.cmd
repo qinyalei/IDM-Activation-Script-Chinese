@@ -1,4 +1,4 @@
-chcp 65001
+chcp 936
 @set iasver=1.2
 @setlocal DisableDelayedExpansion
 @echo off

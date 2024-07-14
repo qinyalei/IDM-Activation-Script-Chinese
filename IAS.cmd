@@ -70,7 +70,7 @@ set "mas=https://github.com/lstprjct/IDM-Activation-Script/wiki/"
 sc query Null | find /i "RUNNING"
 if %errorlevel% NEQ 0 (
 echo:
-echo Null service is not running, script may crash...
+echo Null锟斤拷锟斤拷未锟斤拷锟斤拷,锟脚憋拷锟斤拷锟杰伙拷锟斤拷锟 ...
 echo:
 echo:
 echo Help - %mas%IAS-Help#troubleshoot
@@ -85,7 +85,7 @@ cls
 pushd "%~dp0"
 >nul findstr /v "$" "%~nx0" && (
 echo:
-echo Error: Script either has LF line ending issue or an empty line at the end of the script is missing.
+echo 锟斤拷锟斤拷:锟脚憋拷锟斤拷锟杰达拷锟斤拷LF锟叫斤拷锟斤拷锟斤拷锟斤拷:锟斤拷锟竭脚憋拷末尾缺锟劫匡拷锟叫★拷
 echo:
 ping 127.0.0.1 -n 6 >nul
 popd
@@ -97,7 +97,7 @@ popd
 
 cls
 color 07
-title  IDM Activation Script %iasver%
+title  IDM锟斤拷锟斤拷疟锟  %iasver%
 
 set _args=
 set _elev=
@@ -159,14 +159,14 @@ set "_buf={$W=$Host.UI.RawUI.WindowSize;$B=$Host.UI.RawUI.BufferSize;$W.Height=3
 
 if %winbuild% LSS 7600 (
 %nceline%
-echo Unsupported OS version Detected [%winbuild%].
-echo Project is supported only for Windows 7/8/8.1/10/11 and their Server equivalent.
+echo 锟斤拷獾斤拷锟斤拷锟街э拷值牟锟斤拷锟较低筹拷姹  [%winbuild%].
+echo 锟斤拷锟斤拷目锟斤拷支锟斤拷Windows 7/8/8.1/10/11锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟叫э拷姹 .
 goto done2
 )
 
 for %%# in (powershell.exe) do @if "%%~$PATH:#"=="" (
 %nceline%
-echo Unable to find powershell.exe in the system.
+echo 系统锟斤拷锟揭诧拷锟斤拷powershell.exe.
 goto done2
 )
 
@@ -193,10 +193,10 @@ setlocal EnableDelayedExpansion
 echo "!_batf!" | find /i "!_ttemp!" %nul1% && (
 if /i not "!_work!"=="!_ttemp!" (
 %eline%
-echo Script is launched from the temp folder,
-echo Most likely you are running the script directly from the archive file.
+echo 锟脚憋拷锟角达拷锟斤拷时锟侥硷拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷.
+echo 锟斤拷锟杰匡拷锟斤拷锟斤拷直锟接达拷压锟斤拷锟侥硷拷锟斤拷锟斤拷锟叫脚憋拷.
 echo:
-echo Extract the archive file and launch the script from the extracted folder.
+echo 锟斤拷锟饺斤拷压锟斤拷锟侥硷拷锟斤拷然锟斤拷咏锟窖癸拷锟斤拷锟侥硷拷锟斤拷锟斤拷锟斤拷锟斤拷锟脚憋拷.
 goto done2
 )
 )
@@ -211,10 +211,10 @@ REM :PowerShellTest: $ExecutionContext.SessionState.LanguageMode :PowerShellTest
 %eline%
 %psc% $ExecutionContext.SessionState.LanguageMode
 echo:
-echo PowerShell is not working. Aborting...
-echo If you have applied restrictions on Powershell then undo those changes.
+echo PowerShell 锟斤拷锟斤拷锟斤拷锟斤拷.锟斤拷止锟斤拷锟斤拷...
+echo 锟斤拷锟斤拷锟斤拷锟  PowerShell 应锟斤拷锟斤拷锟斤拷锟狡ｏ拷锟诫撤锟斤拷锟斤拷些锟斤拷锟侥★拷
 echo:
-echo Check this page for help. %mas%IAS-Help#troubleshoot
+echo 锟介看锟斤拷页锟斤拷锟皆伙拷取锟斤拷锟斤拷. %mas%IAS-Help#troubleshoot
 goto done2
 )
 
@@ -225,8 +225,8 @@ goto done2
 %nul1% fltmc || (
 if not defined _elev %psc% "start cmd.exe -arg '/c \"!_PSarg!\"' -verb runas" && exit /b
 %eline%
-echo This script requires admin privileges.
-echo To do so, right click on this script and select 'Run as administrator'.
+echo 锟剿脚憋拷锟斤拷要锟斤拷锟斤拷员权锟睫★拷
+echo 锟斤拷锟揭硷拷锟斤拷锟斤拷锟剿脚憋拷锟斤拷然锟斤拷选锟斤拷锟皆癸拷锟斤拷员锟斤拷锟斤拷锟斤拷锟叫★拷锟斤拷
 goto done2
 )
 
@@ -266,10 +266,10 @@ if defined quedit goto :skipQE
 ::========================================================================================================================================
 
 cls
-title  IDM Activation Script %iasver%
+title  IDM锟斤拷锟斤拷疟锟  %iasver%
 
 echo:
-echo Initializing...
+echo 锟斤拷始锟斤拷锟斤拷...
 
 ::  Check WMI
 
@@ -277,9 +277,8 @@ echo Initializing...
 %eline%
 %psc% "Get-WmiObject -Class Win32_ComputerSystem | Select-Object -Property CreationClassName"
 echo:
-echo WMI is not working. Aborting...
+echo WMI 锟斤拷锟斤拷锟斤拷锟矫★拷锟斤拷止锟斤拷锟斤拷...
 echo:
-echo Check this page for help. %mas%IAS-Help#troubleshoot
 goto done2
 )
 
@@ -296,9 +295,9 @@ reg query HKU\%_sid%\Software %nul% || (
 %eline%
 echo:
 echo [%_sid%]
-echo User Account SID not found. Aborting...
+echo 未锟揭碉拷锟矫伙拷锟绞伙拷SID锟斤拷锟斤拷止锟斤拷锟斤拷...
 echo:
-echo Check this page for help. %mas%IAS-Help#troubleshoot
+echo 锟介看锟斤拷页锟斤拷锟皆伙拷取锟斤拷锟斤拷锟斤拷%mas%IAS-Help#troubleshoot
 goto done2
 )
 
@@ -348,9 +347,9 @@ set "idmcheck=tasklist /fi "imagename eq idman.exe" | findstr /i "idman.exe" %nu
 %nul% reg add %CLSID2%\IAS_TEST
 %nul% reg query %CLSID2%\IAS_TEST || (
 %eline%
-echo Failed to write in %CLSID2%
+echo 锟睫凤拷写锟斤拷 %CLSID2%
 echo:
-echo Check this page for help. %mas%IAS-Help#troubleshoot
+echo 锟介看锟斤拷页锟斤拷锟皆伙拷取锟斤拷锟斤拷锟斤拷%mas%IAS-Help#troubleshoot
 goto done2
 )
 
@@ -365,31 +364,31 @@ if %_freeze%==1 (set frz=1&goto :_activate)
 :MainMenu
 
 cls
-title  IDM Activation Script %iasver%
+title  IDM锟斤拷锟斤拷疟锟  %iasver%
 if not defined terminal mode 75, 28
 
 echo:
 echo:
-call :_color2 %_White% "             " %_Green% "Create By Piash"
+call :_color2 %_White% "             " %_Green% "锟斤拷锟斤拷 By Piash"
 echo:            ___________________________________________________ 
 echo:
-echo:               ????By https://github.com/jiangbeichen233
+echo:               锟斤拷锟斤拷By https://github.com/jiangbeichen233
 echo:               Telegram: @ModByPiash
 echo:               Github: https://github.com/lstprjct
 echo:               
 echo:            ___________________________________________________ 
 echo:                                                               
-echo:               [1] ????
-echo:               [2] ????????
-echo:               [3] ???��???/????
+echo:               [1] 锟斤拷锟斤拷
+echo:               [2] 锟斤拷锟斤拷锟斤拷锟斤拷
+echo:               [3] 锟斤拷锟矫硷拷锟斤拷/锟斤拷锟斤拷
 echo:               _____________________________________________   
 echo:                                                               
-echo:               [4] ????IDM
-echo:               [5] ????
-echo:               [0] ???
+echo:               [4] 锟斤拷锟斤拷IDM
+echo:               [5] 锟斤拷锟斤拷
+echo:               [0] 锟剿筹拷
 echo:            ___________________________________________________
 echo:         
-call :_color2 %_White% "             " %_Green% "????????? [1,2,3,4,5,0]??????"
+call :_color2 %_White% "             " %_Blue% "锟节硷拷锟斤拷锟较碉拷锟  [1,2,3,4,5,0]锟皆操匡拷锟斤拷锟 "
 choice /C:123450 /N
 set _erl=%errorlevel%
 
@@ -433,14 +432,14 @@ call :add_key
 echo:
 echo %line%
 echo:
-call :_color %Green% "IDM???��?????????."
+call :_color %Green% "IDM锟斤拷锟矫癸拷锟斤拷锟窖撅拷锟斤拷锟 ."
 
 goto done
 
 :delete_queue
 
 echo:
-echo ???IDM????...
+echo 删锟斤拷IDM注锟斤拷锟 ...
 echo:
 
 for %%# in (
@@ -485,7 +484,7 @@ set "reg=%reg:"=%"
 echo Deleted - !reg!
 ) else (
 set "reg=%reg:"=%"
-call :_color2 %Red% "??? - !reg!"
+call :_color2 %Red% "失锟斤拷 - !reg!"
 )
 
 exit /b
@@ -506,20 +505,20 @@ if %frz%==0 if %_unattended%==0 (
 echo:
 echo %line%
 echo:
-echo      ?��?????????????????????IDM??????????????��???????.
+echo      一些锟矫伙拷锟侥硷拷锟斤拷锟斤拷锟斤拷薹锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟絀DM锟斤拷锟杰伙拷锟斤拷示锟斤拷俚锟斤拷锟斤拷泻锟斤拷锟绞撅拷锟侥 .
 echo:
-call :_color2 %_White% "     " %_Green% "?????????????????."
+call :_color2 %_White% "     " %_Green% "锟斤拷锟斤拷使锟矫讹拷锟斤拷锟斤拷锟斤拷选锟斤拷."
 echo %line%
 echo:
-choice /C:19 /N /M ">    [1] ???? [9] ???? : "
+choice /C:19 /N /M ">    [1] 锟斤拷锟斤拷 [9] 锟斤拷锟斤拷 : "
 if !errorlevel!==1 goto :MainMenu
 cls
 )
 
 echo:
 if not exist "%IDMan%" (
-call :_color %Red% "IDM��???."
-echo "???????????????" https://www.internetdownloadmanager.com/download.html
+call :_color %Red% "IDM未锟斤拷装."
+echo "锟斤拷锟斤拷缘锟斤拷锟剿达拷锟斤拷锟斤拷" https://www.internetdownloadmanager.com/download.html
 goto done
 )
 
@@ -530,10 +529,10 @@ for /f "delims=[] tokens=2" %%# in ('ping -n 1 internetdownloadmanager.com') do 
 
 if not defined _int (
 %psc% "$t = New-Object Net.Sockets.TcpClient;try{$t.Connect("""internetdownloadmanager.com""", 80)}catch{};$t.Connected" | findstr /i "true" %nul1% || (
-call :_color %Red% "????????internetdownloadmanager.com?????????..."
+call :_color %Red% "锟睫凤拷锟斤拷锟斤拷internetdownloadmanager.com锟斤拷锟斤拷锟斤拷锟斤拷止锟斤拷锟斤拷..."
 goto done
 )
-call :_color %Gray% "Ping?????internetdownloadmanager.com???"
+call :_color %Gray% "internetdownloadmanager.com 锟斤拷 ping 锟斤拷锟斤拷失锟斤拷"
 echo:
 )
 
@@ -565,7 +564,7 @@ if %frz%==0 call :register_IDM
 call :download_files
 if not defined _fileexist (
 %eline%
-echo Error: Unable to download files with IDM.
+echo 锟斤拷锟斤拷锟睫凤拷使锟斤拷 IDM 锟斤拷锟斤拷锟侥硷拷锟斤拷
 echo:
 echo Help: %mas%IAS-Help#troubleshoot
 goto :done
@@ -577,13 +576,13 @@ echo:
 echo %line%
 echo:
 if %frz%==0 (
-call :_color %Green% "IDM????????????."
+call :_color %Green% "IDM锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟缴★拷"
 echo:
-call :_color %Gray% "???????????��?????????????????????."
+call :_color %Gray% "锟斤拷锟斤拷锟斤拷旨锟斤拷锟斤拷泻锟斤拷锟侥伙拷锟斤拷锟斤拷锟矫讹拷锟斤拷锟斤拷锟斤拷选锟筋。"
 ) else (
-call :_color %Green% "IDM 30??????????????????????????."
+call :_color %Green% "IDM 30锟斤拷锟斤拷锟斤拷锟斤拷锟窖成癸拷锟斤拷锟结，锟斤拷锟斤拷锟斤拷锟绞癸拷谩锟 "
 echo:
-call :_color %Gray% "???IDM??????????????????????��??IDM."
+call :_color %Gray% "锟斤拷锟絀DM锟斤拷示锟斤拷锟斤拷锟斤拷锟节斤拷锟斤拷注锟结，锟斤拷锟斤拷锟铰帮拷装IDM锟斤拷"
 )
 
 ::========================================================================================================================================
@@ -596,10 +595,10 @@ echo:
 if %_unattended%==1 timeout /t 2 & exit /b
 
 if defined terminal (
-call :_color %_Yellow% "??0??????..."
+call :_color %_Yellow% "锟斤拷0锟斤拷锟斤拷锟斤拷..."
 choice /c 0 /n
 ) else (
-call :_color %_Yellow% "??0?????????..."
+call :_color %_Yellow% "锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟 ..."
 pause %nul1%
 )
 goto MainMenu
@@ -628,7 +627,7 @@ exit /b
 :register_IDM
 
 echo:
-echo ??????????...
+echo 应锟斤拷注锟斤拷锟斤拷锟斤拷......
 echo:
 
 set /a fname = %random% %% 9999 + 1000
@@ -653,7 +652,7 @@ exit /b
 :download_files
 
 echo:
-echo ?????��?????????????????????????...
+echo 锟斤拷锟斤拷一些锟斤拷锟斤拷锟皆达拷锟斤拷锟截讹拷锟斤拷注锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷缘锟 ...
 echo:
 
 set "file=%SystemRoot%\Temp\temp.png"
@@ -691,7 +690,7 @@ goto :Check_file
 :add_key
 
 echo:
-echo ??????????...
+echo 锟斤拷锟斤拷注锟斤拷锟 ...
 echo:
 
 set "reg="%HKLM%" /v "AdvIntDriverEnabled2""
@@ -705,7 +704,7 @@ set "reg=%reg:"=%"
 echo Added - !reg!
 ) else (
 set "reg=%reg:"=%"
-call :_color2 %Red% "Failed - !reg!"
+call :_color2 %Red% "失锟斤拷 - !reg!"
 )
 exit /b
 
@@ -727,7 +726,7 @@ foreach ($regPath in $regPaths) {
     }
 	
 	Write-Host
-	Write-Host "Searching IDM CLSID Registry Keys in $regPath"
+	Write-Host "鎼滅储 IDM CLSID 娉ㄥ唽琛ㄤ腑鈥  $regPath"
 	Write-Host
 	
     $subKeys = Get-ChildItem -Path $regPath -ErrorAction SilentlyContinue -ErrorVariable lockedKeys | Where-Object { $_.PSChildName -match '^\{[A-F0-9]{8}-[A-F0-9]{4}-[A-F0-9]{4}-[A-F0-9]{4}-[A-F0-9]{12}\}$' }
@@ -787,21 +786,21 @@ $finalValues = @($finalValues | Select-Object -Unique)
 if ($finalValues -ne $null) {
     Write-Host
     if ($lockKey -ne $null) {
-        Write-Host "Locking IDM CLSID Registry Keys..."
+        Write-Host "锟斤拷锟斤拷IDM CLSID注锟斤拷锟斤拷锟 ..."
     }
     if ($deleteKey -ne $null) {
-        Write-Host "Deleting IDM CLSID Registry Keys..."
+        Write-Host "删锟斤拷IDM CLSID注锟斤拷锟斤拷锟 ..."
     }
     Write-Host
 } else {
-    Write-Host "IDM CLSID Registry Keys are not found."
+    Write-Host "未锟揭碉拷IDM CLSID注锟斤拷锟斤拷锟斤拷锟 "
 	Exit
 }
 
 if (($finalValues.Count -gt 20) -and ($toggle -ne $null)) {
 	$lockKey = $null
 	$deleteKey = 1
-    Write-Host "The IDM keys count is more than 20. Deleting them now instead of locking..."
+    Write-Host "IDM锟斤拷注锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟 20锟斤拷锟斤拷锟斤拷锟节斤拷删锟斤拷锟斤拷锟角ｏ拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷..."
 	Write-Host
 }
 
